@@ -5,7 +5,7 @@ vim.opt.number = true
 vim.opt.colorcolumn = '80'
 vim.opt.shiftwidth = 4
 vim.opt.scrolloff = 7
-vim.opt.completeopt = 'menu,menuone,noselect'
+--vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.undofile = true
 
 -- Plugins --
@@ -15,13 +15,9 @@ require('autopairs_config')
 require('nvim-tree_config')
 require('lualine_config')
 require('nvim-cmp_config')
-require'cmp'.setup {
-  sources = {
-    { name = 'nvim_lsp' }
-  }
-}
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 require'lspconfig'.clangd.setup {
   capabilities = capabilities,
 }

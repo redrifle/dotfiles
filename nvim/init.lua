@@ -12,6 +12,7 @@ vim.opt.undofile = true
 require('packer_config')
 require('treesitter_config')
 require('autopairs_config')
+require('nvim-tree_config')
 require('lualine_config')
 require('nvim-cmp_config')
 require'cmp'.setup {
